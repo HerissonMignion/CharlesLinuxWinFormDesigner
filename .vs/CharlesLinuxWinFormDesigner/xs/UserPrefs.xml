@@ -1,0 +1,36 @@
+﻿<Properties StartupConfiguration="{7D6D65DB-BB9D-4B27-BAB0-F77DE219262C}|Default">
+  <MonoDevelop.Ide.ItemProperties.CharlesLinuxWinFormDesigner PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CharlesLinuxWinFormDesigner/GUI/FakeControlContainerEditer.cs">
+    <Files>
+      <File FileName="CharlesLinuxWinFormDesigner/GUI/FormDesigner.cs" Line="259" Column="63" />
+      <File FileName="CharlesLinuxWinFormDesigner/GUI/FakeControlContainerEditer.cs" Line="581" Column="55" />
+      <File FileName="CharlesLinuxWinFormDesigner/GUI/Fake/Controls/FakeControl.cs" Line="317" Column="1" />
+      <File FileName="CharlesLinuxWinFormDesigner/GUI/Fake/FakeControlBuilder.cs" Line="91" Column="46" />
+      <File FileName="CharlesLinuxWinFormDesigner/GUI/Fake/Controls/FakeFlowLayoutPanel.cs" Line="16" Column="10" />
+      <File FileName="CharlesLinuxWinFormDesigner/GUI/Fake/Controls/FakePanel.cs" Line="13" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CharlesLinuxWinFormDesigner" expanded="True">
+            <Node name="CharlesLinuxWinFormDesigner" expanded="True">
+              <Node name="GUI" expanded="True">
+                <Node name="Fake" expanded="True">
+                  <Node name="Controls" expanded="True" />
+                  <Node name="IO" expanded="True" />
+                </Node>
+                <Node name="FakeControlContainerEditer.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

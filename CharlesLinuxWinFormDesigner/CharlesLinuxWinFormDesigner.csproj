@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{7D6D65DB-BB9D-4B27-BAB0-F77DE219262C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CharlesLinuxWinFormDesigner</RootNamespace>
+    <AssemblyName>CharlesLinuxWinFormDesigner</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="GUI\FormDesigner.cs" />
+    <Compile Include="GUI\FakeControlContainerEditer.cs" />
+    <Compile Include="GUI\ListChooserDialog.cs" />
+    <Compile Include="GUI\ListChooserDialogEntry.cs" />
+    <Compile Include="GUI\Fake\FakeProperty.cs" />
+    <Compile Include="GUI\Fake\FakeControlBuilder.cs" />
+    <Compile Include="GUI\FakePropertyEditer.cs" />
+    <Compile Include="GUI\AnchorStyleChooserDialog.cs" />
+    <Compile Include="ListWriter.cs" />
+    <Compile Include="ListReader.cs" />
+    <Compile Include="GUI\Fake\Controls\FakeControl.cs" />
+    <Compile Include="GUI\Fake\Controls\FakeControlContainer.cs" />
+    <Compile Include="GUI\Fake\Controls\FakeButton.cs" />
+    <Compile Include="GUI\Fake\Controls\FakeForm.cs" />
+    <Compile Include="GUI\Fake\Controls\FakeLabel.cs" />
+    <Compile Include="GUI\Fake\Controls\FakeCheckBox.cs" />
+    <Compile Include="GUI\Fake\Controls\FakeRadioButton.cs" />
+    <Compile Include="GUI\Fake\Controls\FakeTextBox.cs" />
+    <Compile Include="GUI\Fake\Controls\FakePictureBox.cs" />
+    <Compile Include="GUI\Fake\Controls\FakeNumericUpDown.cs" />
+    <Compile Include="GUI\Fake\Controls\FakeComboBox.cs" />
+    <Compile Include="GUI\Fake\Controls\FakePanel.cs" />
+    <Compile Include="GUI\Fake\Controls\FakeGroupBox.cs" />
+    <Compile Include="GUI\Fake\Controls\FakeListBox.cs" />
+    <Compile Include="GUI\Fake\Controls\FakeTabControl.cs" />
+    <Compile Include="GUI\Fake\Controls\FakeTabPage.cs" />
+    <Compile Include="GUI\Fake\Controls\FakeMenuStrip.cs" />
+    <Compile Include="GUI\Fake\Controls\FakeToolStripMenuItem.cs" />
+    <Compile Include="GUI\Fake\FakeControlDrawingContext.cs" />
+    <Compile Include="GUI\Fake\IO\SaveFormat1.cs" />
+    <Compile Include="GUI\Fake\IO\SaveFormat1Data.cs" />
+    <Compile Include="GUI\Fake\IO\ExportCSharp1.cs" />
+    <Compile Include="GUI\Fake\Controls\FakeStatusStrip.cs" />
+    <Compile Include="GUI\Fake\Controls\FakeToolStripStatusLabel.cs" />
+    <Compile Include="GUI\Fake\Controls\FakeDateTimePicker.cs" />
+    <Compile Include="GUI\Fake\Controls\FakeFlowLayoutPanel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="GUI\" />
+    <Folder Include="GUI\Fake\" />
+    <Folder Include="GUI\Fake\Controls\" />
+    <Folder Include="GUI\Fake\IO\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SaveFormat.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

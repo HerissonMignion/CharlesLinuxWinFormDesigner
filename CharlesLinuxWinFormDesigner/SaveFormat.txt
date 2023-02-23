@@ -1,0 +1,191 @@
+﻿
+
+Dans tout les formats de sauvegarde, la première ligne indique le numéro du format de sauvegarde, qui est toujours un nombre entier.
+
+
+
+######### Format de Sauvegarde 1 #########
+Le fichier est lu de haut en bas.
+La première ligne contient "1".
+Le fichier se termine par la dernière ligne "utile", et elle devra être "eof".
+```
+1
+//plusieurs lignes
+eof
+//les choses après sont ignorées
+```
+
+On indique le namespace par une ligne "namespace" suivi de la chaine de texte sur la ligne suivante.
+```
+namespace
+//chaine de texte de namespace.
+```
+
+
+La signature d'un contrôle commence par "fc" pour un FakeControl ou "fcc" pour un FakeControlContainer.
+La signature d'un contrôle se termine par "end".
+Le TopFakeCC est habituellement un FakeControlContainer, donc le fichier ressemblera à ça :
+```
+1
+fcc
+//plusieurs lignes
+end
+eof
+//les choses après sont ignorées
+```
+
+À l'intérieur du block d'un contrôle, il y a d'autres éléments.
+
+Les FCC ont certaines propriétés qui sont pour un usage interne au programme.
+La propriété "ChildrenAreaTopLeft" en est un exemple.
+La signature de ChildrenAreaTopLeft est la suivante :
+```
+ChildrenAreaTopLeft
+//valeur horizontale
+//valeur verticale
+```
+
+
+Les FC et les FCC ont des propriétés. Il faut mettre les valeurs des propriétés dans le fichier.
+La signature d'une propriété est la suivante :
+```
+property
+// nom de la propriété, sensible à la case.
+// type de la propriété.
+// block de la valeur de la propriété. (possiblement plusieurs lignes).
+```
+
+Les types supportés des valeurs des propriétés sont les suivants :
+"int", "decimal", "string", "bool", "Color", "AnchorStyles", "Font", "EnumValue", "object"
+Le type "object" sert à mettre dans le fichier un null. littéralement. Quand je vais ajouter des fonctionnalités, il se pourrait que j'oublis
+de programmer la sauvegarde au début, alors quand la méthode de sauvegarde tombe sur un type qu'elle ne supporte pas, alors elle met "null".
+Le type "EnumValue" sert à mettre une valeur d'une énumération, mais pas la valeur numérique, la valeur textuelle dans l'enum qu'on pourra récupérer.
+Le programme utilise la réflection pour ne pas avoir à programmer certains trucs plusieurs fois, et j'ai programmé avec la réflection la gestion de certains enums.
+
+Signature d'un int :
+```
+int
+// valeur textuel du nombre
+```
+Signature d'un decimal :
+```
+decimal
+// valeur textuel du nombre
+```
+Signature d'un string :
+```
+string
+// la quantité de lignes (1 habituellement).
+// la chaine de texte, sur (plusieurs?) lignes
+```
+Signature d'un bool :
+```
+bool
+// "true" ou "false" sur cette ligne
+```
+Signature d'un "null" :
+```
+object
+null
+```
+Signature d'une couleur :
+```
+Color
+// composante alpha de 0 à 255
+// composante rouge de 0 à 255
+// composante vert de 0 à 255
+// composante bleue de 0 à 255
+```
+Signature d'une font :
+```
+Font
+// le family name de la font
+// la taille de la font. Multiplié par 10000 et mis en nombre entier.
+// true/false pour Bold
+// true/false pour Italic
+// true/false pour Underline
+// true/false pour Strikeout
+```
+Signature d'un AnchorStyles :
+```
+AnchorStyles
+// true/false pour Left
+// true/false pour Top
+// true/false pour Right
+// true/false pour Bottom
+```
+Signature d'un EnumValue :
+```
+EnumValue
+//le type complet de l'enum. par exemple : "System.Drawing.ContentAlignment" sans les "".
+//le nom du membre de l'enum. par exemple, pour "System.Drawing.ContentAlignment" cela pourrait être "TopLeft", sans les "".
+```
+
+
+
+Exemple d'une propriété d'un type non supporté par la sauvegarde :
+```
+property
+nom_de_la_propriete
+object
+null
+```
+
+
+Les FakeControlContainer ont une liste d'enfants. Cette liste peut contenir n'importe quel quantité d'enfants, alors c'est un block qui a la signature suivante :
+```
+Children
+// des fake control
+end
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
